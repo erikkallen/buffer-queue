@@ -64,3 +64,12 @@ BufferQueue.prototype.drain = function () {
   this._buffers.length = this._buffersLength = 0;
   return data;
 };
+/**
+ * Returns the aggregate buffer
+ *
+ * @return {Buffer}
+ */
+BufferQueue.prototype.peek = function () {
+  var data = Buffer.concat(this._buffers, this.buffersLength);
+  return data;
+};
